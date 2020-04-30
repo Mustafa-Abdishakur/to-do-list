@@ -31,17 +31,41 @@ setInterval(function(){
 
 //Insert to list
 DOM.add.addEventListener('click', ()=>{
-    const item = DOM.input.value;
-    const markup = `
-    <div class="item">
-        <input type="checkbox" class="item-checkbox">
-        <p>${item}</p>
-           <div class="item-btns-container">
-                <img src="img/edit.png" alt="edit">
-                <img src="img/cancel.png" alt="delete">
-            </div>
-    </div>
-    `;
-    DOM.text.insertAdjacentHTML('beforeend', markup);
-    DOM.input.value = '';
-});
+    addToList();
+      
+  });
+  DOM.input.addEventListener('keyup', event=>{
+      if(event.keyCode === 13){
+          addToList();
+      }
+  });
+  
+  //highlight text
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function addToList(){
+      const item = DOM.input.value;
+      if(item!==''){
+          const markup = `
+          <div class="item">
+              <input type="checkbox" class="item-checkbox">
+              <p>${item}</p>
+                 <div class="item-btns-container">
+                      <img src="img/edit.png" alt="edit">
+                      <img src="img/cancel.png" alt="delete">
+                  </div>
+          </div>
+          `;
+          DOM.text.insertAdjacentHTML('beforeend', markup);
+          DOM.input.value = '';
+      }
+  };
