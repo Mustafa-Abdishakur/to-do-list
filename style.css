@@ -15,6 +15,7 @@ body{
 .main-container{
     background:lightblue;
     width:50vw;
+    min-height: 70vh;
     margin:auto;
     padding-top:20px;
     margin-top:50px;
@@ -40,19 +41,15 @@ header h2{
     width:70%;
     height:25px;
     padding-left:10px;
+    margin-bottom:7px;
 }
-.highlight-btn{
-    width:13%;
+.highlight-btn, .add-btn{
+    min-width:13%;
     height:30px;
     font-weight: bold;
 
 }
-.add-btn{
-    width:13%;
-    height:30px;
-    font-weight: bold;
 
-}
 .item{
     display:flex;
     align-items: center;
@@ -60,6 +57,7 @@ header h2{
     position: relative;
     overflow:auto;
     transition: background 0.4s;
+    overflow:hidden;
 }
 .item:hover{
     background:rgb(122, 174, 241);
@@ -73,11 +71,9 @@ header h2{
 .item input[type=checkbox]{
     width:19px;
     height:19px;
-    position: absolute;
-    top:12px;
 }
 .item p{
-    margin-left:5%;
+    margin-left:5px;
   
 }
 .item .item-btns-container{
@@ -107,4 +103,34 @@ header h2{
     right:0;
     bottom:0;
     font-size:12px;
+}
+.red-border{
+    border:2px solid red;
+}
+.container-2 input[type="text"]{
+    width:80%;
+    height:20px;
+    
+}
+
+@media (max-width:1270px){
+    .container-1 input[type=text]{
+width:90%;
+}
+.highlight-btn{
+    margin-left:30%;
+}
+header h2{
+    border-bottom:1px solid grey;
+    width:300px;
+}
+.details-container{
+    position:absolute;
+    right:12%;
+}
+}
+@media (max-width:900px){
+    .details-container{
+        right:10%;
+    }
 }
